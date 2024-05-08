@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000000ca;
+}
+
+.box {
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.box form {
+    position: absolute;
+    inset: 4px;
+    background-color: #222;
+    padding: 100px 30px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+    transform-origin: bottom right;
+    z-index: 1;
+    animation: animate 6s linear infinite;
+}
+.borderLine {
+    position: absolute;
+    top: 0;
+    inset: 0;
+
+}
+
+.borderLine::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#ff2770,#ff2770,#ff2770);
+    transform-origin: bottom right;
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+
+.borderLine::after
+{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#ff2770,#ff2770,#ff2770);
+    transform-origin: bottom right;
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+    transform-origin: bottom right;
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.box form .inputbox {
+    margin: 10px;
+    position: relative;
+
+}
+
+.box form .inputbox input {   position: relative;
+    width: 300px;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: #ff2770;
+    font-size: 1.1em;
+    padding-left: 2px;
+    text-transform: capitalize;
+    
+
+
+
+}
+
+.box form input[type='submit'] {
+    margin-top: 20px;
+    width: 150px;
+    font-size: 1.2em;
+    padding: 10px 5px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    position: relative;
+    left: 28%;
+    color: gray;
+    text-transform: uppercase;
+    
+}
+
+.box form input[type='submit']:hover {
+    color: #45f3ff;
+
+
+}
+
+    .box form input[type='submit']:active{
+        color: #ff2770;
+        font-size: 1.1em;
+        box-shadow: 1px 5px 5px  #ff2770;
+        transition: 0.1s;
+
+    }
+
+.box form .inputbox label{
+    position: absolute;
+    color: gray;
+    right:  225px;
+    top: 5px;
+    pointer-events: none;
+}
+
+.box form .inputbox input:valid~label,
+.box form .inputbox input:focus~label{
+    transform: translateX(-15px)translateY(-16px);
+    color: #45f3ff;
+    padding-bottom: 0px;
+    transition: all .3s ease ;
+    font-size: 0.8em;
+    background-color:#222 ;
+}
