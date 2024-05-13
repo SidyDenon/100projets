@@ -1,0 +1,92 @@
+body {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+background:  gray;
+
+}
+
+.animatebox {
+    font-size: 1.3rem;
+    min-width: 300px;
+    position: relative;
+}
+
+span {
+    position: absolute;
+    left: 33px;
+}
+
+span::before {
+    content: 'Freelencer';
+    color: orangered;
+    /* width: calc(100% + 8px); */
+    animation: word 20s infinite;
+}
+
+span::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background: gray;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+    right: -8px;
+    border-left: 2px solid orangered;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 3px solid gray;
+    }
+}
+
+@keyframes word {
+    0%,20% {
+        content: 'Freelencer';
+    }
+    21%,40% {
+        content: 'Frontend Developer ';
+    }
+    41%,60% {
+        content: 'BackEnd Developer';
+    }
+    61%,80% {
+        content: 'Web Designer';
+    }
+    81%,100% {
+        content: 'Full Stack developer';
+    }
+     
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95% {
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+
+}
+
+.blog {
+    visibility: hidden;
+    border: 1px solid;
+    margin: 20px;
+    align-content: center;
+    width: 100%;
+    height: 100px;
+    background-color: aliceblue;
+    border-radius: 15px;
+    text-align: center;
+
+}
+
+button {
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+}
