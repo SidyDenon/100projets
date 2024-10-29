@@ -1,0 +1,59 @@
+body {
+    /* color: ; */
+    background: #002339;
+color: white;
+    
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    position: relative;
+    top: 100px;
+    /* left: 50%; */
+    /* transform: translate(50%,50%); */
+
+    h1 {
+        font-size: 4em;
+
+        span { 
+        color:hsla(178, 100%, 75%, 0.932) ;
+        }
+    }
+
+    i {
+        position: absolute;
+        top: 235px;
+        color: black;
+        left: 375px;
+        font-size: 2em;
+        cursor: pointer;
+
+        &:active {
+            transform: scale(.9);
+        }
+    }
+
+
+}
+
+input {
+    width: 400px;
+    height: 30px;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+input[type='submit']{
+    width: 300px;
+    height: 40px;
+    font-size: 1.5em;
+    color: white;
+    background: hsla(178, 100%, 75%, 0.568);
+    cursor: pointer;
+}
